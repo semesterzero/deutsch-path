@@ -3,13 +3,13 @@ import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import icon from 'astro-icon';
 
-// This is a GitHub Pages *project* site (org: semesterzero, repo: main-blog),
-// not an org-root (semesterzero.github.io) site — base must stay '/main-blog/'
+// This is a GitHub Pages *project* site (org: semesterzero, repo: deutsch-path),
+// not an org-root (semesterzero.github.io) site — base must stay '/deutsch-path/'
 // unless the repo is renamed to semesterzero.github.io or a custom domain is added.
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://semesterzero.github.io/main-blog',
-  base: '/main-blog/',
+  site: 'https://semesterzero.github.io/deutsch-path',
+  base: '/deutsch-path/',
   integrations: [icon()],
   vite: {
     plugins: [tailwindcss()],
