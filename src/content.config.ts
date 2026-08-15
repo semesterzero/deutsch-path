@@ -11,6 +11,9 @@ const baseSchema = z.object({
   lastVerified: z.coerce.date(),
   author: reference('authors'),
   lang: z.enum(LANGUAGES).default('en'),
+  // Shared across every language variant of the same post, so the language
+  // toggle can find them. Leave unset for posts with no translation.
+  translationGroup: z.string().optional(),
   university: z.enum(UNIVERSITIES).optional(),
   city: z.enum(CITIES).optional(),
   intake: z

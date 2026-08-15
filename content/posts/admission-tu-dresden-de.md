@@ -11,6 +11,7 @@ city: Dresden
 intake: WS25
 tags: [university, documents]
 lang: de
+translationGroup: admission-tu-dresden
 draft: false
 ---
 

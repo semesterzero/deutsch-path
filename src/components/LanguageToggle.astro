@@ -1,0 +1,30 @@
+---
+import { LANGUAGE_LABELS, type Language } from '../lib/constants';
+import { withBase } from '../lib/url';
+
+interface Props {
+  current: Language;
+  translations: { lang: Language; slug: string }[];
+}
+
+const { current, translations } = Astro.props;
+const all = [{ lang: current, slug: undefined }, ...translations].sort((a, b) =>
+  a.lang.localeCompare(b.lang)
+);
+---
+
+{translations.length > 0 && (
+  <div class="flex items-center gap-2 text-xs tracking-widest uppercase text-base-content/50">
+    <span>Also in:</span>
+    {all.map(({ lang, slug }, i) => (
+      <>
+        {i > 0 && <span class="text-base-content/30">·</span>}
+        {lang === current ? (
+          <span class="text-accent">{LANGUAGE_LABELS[lang]}</span>
+        ) : (
+          <a class="hover:text-base-content" href={withBase(`/posts/${slug}/`)}>{LANGUAGE_LABELS[lang]}</a>
+        )}
+      </>
+    ))}
+  </div>
+)}
