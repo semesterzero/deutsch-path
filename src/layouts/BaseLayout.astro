@@ -1,4 +1,5 @@
 ---
+import { Icon } from 'astro-icon/components';
 import StageNav from '../components/StageNav.astro';
 import { withBase } from '../lib/url';
 import '../styles/global.css';
@@ -26,8 +27,14 @@ const { title, description = 'Real experiences of moving from India to Germany f
         <a href={withBase('/')} class="font-display text-xl tracking-tight lowercase">semester zero</a>
         <nav aria-label="Primary" class="flex flex-wrap gap-6 text-xs tracking-widest uppercase text-base-content/70">
           <a class="hover:text-base-content" href={withBase('/')}>Home</a>
-          <a class="text-accent hover:text-accent/70" href="https://github.com/semesterzero/main-blog/blob/main/CONTRIBUTING.md">Write a post</a>
-          <a class="hover:text-base-content" href="https://github.com/semesterzero/main-blog">GitHub</a>
+          <a class="inline-flex items-center gap-1 text-accent hover:text-accent/70" href="https://github.com/semesterzero/main-blog/blob/main/CONTRIBUTING.md">
+            Write a post
+            <Icon name="lucide:arrow-up-right" width={13} height={13} />
+          </a>
+          <a class="inline-flex items-center gap-1 hover:text-base-content" href="https://github.com/semesterzero/main-blog">
+            <Icon name="lucide:github" width={14} height={14} />
+            GitHub
+          </a>
         </nav>
       </header>
 

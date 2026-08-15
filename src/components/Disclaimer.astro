@@ -1,8 +1,12 @@
 ---
+import { Icon } from 'astro-icon/components';
 ---
 
-<p class="my-6 border-l-2 border-info pl-4 text-sm text-base-content/70">
-  This is one person's personal experience, not immigration or legal advice.
-  It does not tell you what you are eligible for or what will happen in your
-  case — always confirm current requirements with an official source.
+<p class="my-6 flex items-start gap-2 border-l-2 border-info pl-4 text-sm text-base-content/70">
+  <Icon name="lucide:info" width={16} height={16} class="mt-0.5 shrink-0 text-info" />
+  <span>
+    This is one person's personal experience, not immigration or legal advice.
+    It does not tell you what you are eligible for or what will happen in your
+    case — always confirm current requirements with an official source.
+  </span>
 </p>

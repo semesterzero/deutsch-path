@@ -1,0 +1,12 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+  class?: string;
+  size?: number;
+}
+
+const { class: className = '', size = 14 } = Astro.props;
+---
+
+<Icon name="lucide:asterisk" width={size} height={size} class={`inline-block shrink-0 text-accent ${className}`} />

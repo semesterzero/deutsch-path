@@ -1,4 +1,6 @@
 ---
+import { Icon } from 'astro-icon/components';
+
 interface Props {
   lastVerified: Date;
 }
@@ -12,10 +14,13 @@ const isStale = Date.now() - lastVerified.getTime() > twelveMonthsMs;
 ---
 
 {isStale && (
-  <p class="my-6 border-l-2 border-accent pl-4 text-sm text-base-content/70">
-    Facts in this post were last verified on{' '}
-    {lastVerified.toISOString().slice(0, 10)}, more than a year ago. Visa
-    rules, fees, and requirements change yearly — double-check anything
-    specific before relying on it.
+  <p class="my-6 flex items-start gap-2 border-l-2 border-accent pl-4 text-sm text-base-content/70">
+    <Icon name="lucide:triangle-alert" width={16} height={16} class="mt-0.5 shrink-0 text-accent" />
+    <span>
+      Facts in this post were last verified on{' '}
+      {lastVerified.toISOString().slice(0, 10)}, more than a year ago. Visa
+      rules, fees, and requirements change yearly — double-check anything
+      specific before relying on it.
+    </span>
   </p>
 )}

@@ -1,4 +1,5 @@
 ---
+import { Icon } from 'astro-icon/components';
 import { STAGE_LABELS, type Stage } from '../lib/constants';
 import { withBase } from '../lib/url';
 
@@ -23,7 +24,10 @@ const { slug, title, description, type, stage, date } = Astro.props;
   </p>
   <div>
     <h3 class="font-display text-2xl">
-      <a class="hover:underline" href={withBase(`/posts/${slug}/`)}>{title}</a>
+      <a class="group inline-flex items-center gap-1.5 hover:underline" href={withBase(`/posts/${slug}/`)}>
+        {title}
+        <Icon name="lucide:arrow-right" width={18} height={18} class="shrink-0 -translate-x-1 text-accent opacity-0 transition group-hover:translate-x-0 group-hover:opacity-100" />
+      </a>
     </h3>
     <p class="mt-2 text-base-content/70">{description}</p>
   </div>

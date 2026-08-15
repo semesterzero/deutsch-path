@@ -2,6 +2,7 @@
 import BaseLayout from './BaseLayout.astro';
 import Disclaimer from '../components/Disclaimer.astro';
 import FreshnessBanner from '../components/FreshnessBanner.astro';
+import Asterisk from '../components/Asterisk.astro';
 import { STAGE_LABELS, type Stage } from '../lib/constants';
 
 interface Props {
@@ -43,7 +44,9 @@ const {
     </p>
     <h1 class="font-display mt-3 text-4xl leading-tight md:text-5xl">{title}</h1>
 
-    <div aria-hidden="true" class="my-8 text-center text-accent">*</div>
+    <div aria-hidden="true" class="my-8 flex justify-center">
+      <Asterisk size={18} />
+    </div>
 
     <Disclaimer />
     <FreshnessBanner lastVerified={lastVerified} />
