@@ -61,3 +61,12 @@ export const TAGS = [
 ] as const;
 
 export type Tag = (typeof TAGS)[number];
+
+export const LANGUAGES = ['en', 'de'] as const;
+
+export type Language = (typeof LANGUAGES)[number];
+
+export const LANGUAGE_LABELS: Record<Language, string> = {
+  en: 'English',
+  de: 'Deutsch',
+};

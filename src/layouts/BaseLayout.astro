@@ -1,36 +1,45 @@
 ---
 import { Icon } from 'astro-icon/components';
 import StageNav from '../components/StageNav.astro';
+import GermanMark from '../components/GermanMark.astro';
 import { withBase } from '../lib/url';
 import '../styles/global.css';
 
 interface Props {
   title: string;
   description?: string;
+  lang?: string;
 }
 
-const { title, description = 'Real experiences of moving from India to Germany for a Master\'s.' } = Astro.props;
+const {
+  title,
+  description = 'Real experiences of moving from India to Germany for a Master\'s.',
+  lang = 'en',
+} = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" data-theme="editorial">
+<html lang={lang} data-theme="editorial">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href={withBase('/favicon.svg')} />
-    <title>{title} · Semester Zero</title>
+    <title>{title} · Deutsch Path</title>
     <meta name="description" content={description} />
   </head>
   <body class="flex min-h-screen flex-col bg-base-100 text-base-content">
     <header class="flex flex-wrap items-center justify-between gap-4 border-b border-base-300 px-6 py-6 md:px-10">
-      <a href={withBase('/')} class="font-display text-xl tracking-tight lowercase">semester zero</a>
+      <a href={withBase('/')} class="inline-flex items-center gap-2 font-display text-xl tracking-tight">
+        <GermanMark />
+        Deutsch Path
+      </a>
       <nav aria-label="Primary" class="flex flex-wrap gap-6 text-xs tracking-widest uppercase text-base-content/70">
         <a class="hover:text-base-content" href={withBase('/')}>Home</a>
-        <a class="inline-flex items-center gap-1 text-accent hover:text-accent/70" href="https://github.com/semesterzero/main-blog/blob/main/CONTRIBUTING.md">
+        <a class="inline-flex items-center gap-1 text-accent hover:text-accent/70" href="https://github.com/semesterzero/deutsch-path/blob/main/CONTRIBUTING.md">
           Write a post
           <Icon name="lucide:arrow-up-right" width={13} height={13} />
         </a>
-        <a class="inline-flex items-center gap-1 hover:text-base-content" href="https://github.com/semesterzero/main-blog">
+        <a class="inline-flex items-center gap-1 hover:text-base-content" href="https://github.com/semesterzero/deutsch-path">
           <Icon name="lucide:github" width={14} height={14} />
           GitHub
         </a>
@@ -45,11 +54,17 @@ const { title, description = 'Real experiences of moving from India to Germany f
       <slot />
     </main>
 
-    <footer class="border-t border-base-300 px-6 py-6 text-center text-xs text-base-content/60 md:px-10">
+    <footer class="border-t border-base-300 px-6 py-10 text-center text-xs text-base-content/60 md:px-10">
       <p>
+        Deutsch Path is a <span class="text-base-content/80">Semester Zero</span> project.
+      </p>
+      <p class="mt-3">
         Code is MIT licensed. Content is CC BY 4.0 — authors keep copyright
         and grant publishing rights. See
-        <a class="underline hover:text-base-content" href="https://github.com/semesterzero/main-blog/blob/main/CONTRIBUTING.md">CONTRIBUTING</a> to write a post.
+        <a class="underline hover:text-base-content" href="https://github.com/semesterzero/deutsch-path/blob/main/CONTRIBUTING.md">CONTRIBUTING</a> to write a post.
+      </p>
+      <p class="mt-6 text-base-content/50">
+        Built by Srikhar Shashi D, for future aspirants.
       </p>
     </footer>
   </body>

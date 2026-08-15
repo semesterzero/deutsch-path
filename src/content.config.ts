@@ -1,6 +1,6 @@
 import { defineCollection, reference, z } from 'astro:content';
 import { glob } from 'astro/loaders';
-import { CITIES, STAGES, TAGS, UNIVERSITIES } from './lib/constants';
+import { CITIES, LANGUAGES, STAGES, TAGS, UNIVERSITIES } from './lib/constants';
 
 const baseSchema = z.object({
   title: z.string().min(1),
@@ -10,6 +10,7 @@ const baseSchema = z.object({
   date: z.coerce.date(),
   lastVerified: z.coerce.date(),
   author: reference('authors'),
+  lang: z.enum(LANGUAGES).default('en'),
   university: z.enum(UNIVERSITIES).optional(),
   city: z.enum(CITIES).optional(),
   intake: z

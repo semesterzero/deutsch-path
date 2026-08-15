@@ -3,7 +3,7 @@ import BaseLayout from './BaseLayout.astro';
 import Disclaimer from '../components/Disclaimer.astro';
 import FreshnessBanner from '../components/FreshnessBanner.astro';
 import Asterisk from '../components/Asterisk.astro';
-import { STAGE_LABELS, type Stage } from '../lib/constants';
+import { LANGUAGE_LABELS, STAGE_LABELS, type Language, type Stage } from '../lib/constants';
 
 interface Props {
   title: string;
@@ -17,6 +17,7 @@ interface Props {
   city?: string;
   intake?: string;
   tags: string[];
+  lang: Language;
 }
 
 const {
@@ -31,16 +32,18 @@ const {
   city,
   intake,
   tags,
+  lang,
 } = Astro.props;
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} lang={lang}>
   <article>
     <p class="text-xs tracking-widest uppercase text-base-content/50">
       <span class={type === 'experience' ? 'text-accent' : 'text-secondary'}>{type}</span>
       {' '}· {STAGE_LABELS[stage]} ·{' '}
       <time datetime={date.toISOString()}>{date.toISOString().slice(0, 10)}</time>
       {' '}· by {authorName}
+      {lang !== 'en' && <>{' '}· <span class="text-accent">{LANGUAGE_LABELS[lang]}</span></>}
     </p>
     <h1 class="font-display mt-3 text-4xl leading-tight md:text-5xl">{title}</h1>
 

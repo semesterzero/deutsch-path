@@ -1,7 +1,8 @@
-# Contributing to Semester Zero
+# Contributing to Deutsch Path
 
-Thanks for wanting to share your experience or improve a guide. This project
-runs on personal accounts from real people — that's the whole point.
+Thanks for wanting to share your experience or improve a guide. Deutsch Path
+is a [Semester Zero](https://github.com/semesterzero) project, and it runs
+on personal accounts from real people — that's the whole point.
 
 ## Ways to contribute
 
@@ -40,6 +41,7 @@ stage: visa                   # applying | admission | visa | arrival | studying
 date: 2026-08-14
 lastVerified: 2026-08-14      # when you last checked the facts in this post
 author: your-author-slug      # must match a file in content/authors/
+lang: en                      # en | de — omit for English, the default
 university: TU Berlin         # experience only — omit for guide
 city: Berlin                  # experience only — omit for guide
 intake: WS25                  # experience only — omit for guide; format WS|SS + 2 digits

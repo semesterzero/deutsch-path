@@ -1,13 +1,14 @@
-# Semester Zero
+# Deutsch Path
 
-An open-source blog where Indian students share real experiences of moving to
-Germany for a Master's: applications, APS, visa appointments, blocked
-accounts, arrival, studying, working.
+A [Semester Zero](https://github.com/semesterzero) project — an open-source
+blog where Indian students share real experiences of moving to Germany for a
+Master's: applications, APS, visa appointments, blocked accounts, arrival,
+studying, working.
 
 These are personal accounts, not immigration or legal advice. See the
 disclaimer on every post.
 
-**Live site:** https://semesterzero.github.io/main-blog/
+**Live site:** https://semesterzero.github.io/deutsch-path/
 
 ## Stack
 
@@ -42,7 +43,7 @@ pnpm run check      # schema + type validation (astro check)
   /components   # StageNav, PostCard, FreshnessBanner, Disclaimer
   /pages        # routes, including generated filter pages
   /lib
-    constants.ts       # stages, universities, cities, tags — single source of truth
+    constants.ts       # stages, universities, cities, tags, languages — single source of truth
   content.config.ts     # the frontmatter schema — source of truth for what a post needs
 /.github/workflows       # ci.yml (PR checks), deploy.yml (publish to Pages)
 ```
@@ -62,6 +63,7 @@ authors keep copyright and grant this project publishing rights. See
 ## Roadmap
 
 - **v1** (current): schema, post layout, stage nav, filter pages, freshness
-  banner, CI, deploy, live on GitHub Pages
+  banner, CI, deploy, live on GitHub Pages; basic multilingual support in the
+  schema (`lang` field, no per-language routing yet)
 - **v2**: RSS, sitemap, search, prefilled "write a post" links
 - **v3**: comments, no-git submission intake, author pages

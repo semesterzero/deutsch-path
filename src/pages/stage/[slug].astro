@@ -31,6 +31,7 @@ const posts = (await getCollection('posts', ({ data }) => !data.draft && data.st
       type={post.data.type}
       stage={post.data.stage}
       date={post.data.date}
+      lang={post.data.lang}
     />
   ))}
 </BaseLayout>

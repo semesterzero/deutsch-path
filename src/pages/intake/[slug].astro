@@ -35,6 +35,7 @@ const sorted = [...posts].sort((a, b) => b.data.date.valueOf() - a.data.date.val
       type={post.data.type}
       stage={post.data.stage}
       date={post.data.date}
+      lang={post.data.lang}
     />
   ))}
 </BaseLayout>

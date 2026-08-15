@@ -4,11 +4,13 @@ Instructions for Claude Code working in this repository.
 
 ## What this is
 
-**Semester Zero** — an open-source blog where Indian students share real experiences of
+**Deutsch Path** — an open-source blog where Indian students share real experiences of
 moving to Germany for a Master's. Applications, APS, visa appointments, blocked accounts,
-arrival, studying, working.
+arrival, studying, working. It's a [Semester Zero](https://github.com/semesterzero) project
+— Semester Zero is the parent brand under which the maintainer documents their student
+journey; Deutsch Path is this specific site.
 
-Repo: `github.com/semesterzero/<repo>`
+Repo: `github.com/semesterzero/deutsch-path`
 
 The site is static. No database, no backend, no auth. Content is markdown in git.
 

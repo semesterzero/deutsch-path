@@ -1,6 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components';
-import { STAGE_LABELS, type Stage } from '../lib/constants';
+import { LANGUAGE_LABELS, STAGE_LABELS, type Language, type Stage } from '../lib/constants';
 import { withBase } from '../lib/url';
 
 interface Props {
@@ -10,15 +10,17 @@ interface Props {
   type: 'experience' | 'guide';
   stage: Stage;
   date: Date;
+  lang: Language;
 }
 
-const { slug, title, description, type, stage, date } = Astro.props;
+const { slug, title, description, type, stage, date, lang } = Astro.props;
 ---
 
 <article class="grid grid-cols-1 gap-2 border-b border-base-300 py-6 first:pt-0 md:grid-cols-[10rem_1fr] md:gap-8">
   <p class="text-xs tracking-widest uppercase text-base-content/50">
     <span class={type === 'experience' ? 'text-accent' : 'text-secondary'}>{type}</span>
     {' '}· {STAGE_LABELS[stage]}
+    {lang !== 'en' && <>{' '}· <span class="text-accent">{LANGUAGE_LABELS[lang]}</span></>}
     <br />
     <time datetime={date.toISOString()}>{date.toISOString().slice(0, 10)}</time>
   </p>
