@@ -7,7 +7,6 @@ date: 2025-01-10
 lastVerified: 2025-01-10
 author: priya-dresden
 tags: [cost-of-living, housing]
-translationGroup: cost-of-living-dresden-guide
 draft: false
 ---
 

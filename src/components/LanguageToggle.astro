@@ -5,17 +5,23 @@ import { withBase } from '../lib/url';
 interface Props {
   current: Language;
   translations: { lang: Language; slug: string }[];
+  // Used on listing cards, where the toggle sits inline with other meta
+  // rather than as its own labeled line.
+  compact?: boolean;
 }
 
-const { current, translations } = Astro.props;
+const { current, translations, compact = false } = Astro.props;
 const all = [{ lang: current, slug: undefined }, ...translations].sort((a, b) =>
   a.lang.localeCompare(b.lang)
 );
 ---
 
 {translations.length > 0 && (
-  <div class="flex items-center gap-2 text-xs tracking-widest uppercase text-base-content/50">
-    <span>Also in:</span>
+  <div class:list={[
+    'flex items-center gap-2 uppercase text-base-content/50',
+    compact ? 'text-[0.65rem] tracking-wide' : 'text-xs tracking-widest',
+  ]}>
+    {!compact && <span>Also in:</span>}
     {all.map(({ lang, slug }, i) => (
       <>
         {i > 0 && <span class="text-base-content/30">·</span>}

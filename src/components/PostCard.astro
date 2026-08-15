@@ -2,6 +2,7 @@
 import { Icon } from 'astro-icon/components';
 import { LANGUAGE_LABELS, POST_TYPE_COLOR, STAGE_LABELS, type Language, type PostType, type Stage } from '../lib/constants';
 import { withBase } from '../lib/url';
+import LanguageToggle from './LanguageToggle.astro';
 
 interface Props {
   slug: string;
@@ -11,9 +12,10 @@ interface Props {
   stage: Stage;
   date: Date;
   lang: Language;
+  translations?: { lang: Language; slug: string }[];
 }
 
-const { slug, title, description, type, stage, date, lang } = Astro.props;
+const { slug, title, description, type, stage, date, lang, translations = [] } = Astro.props;
 ---
 
 <article class="grid grid-cols-1 gap-2 border-b border-base-300 py-6 first:pt-0 md:grid-cols-[10rem_1fr] md:gap-8">
@@ -32,5 +34,10 @@ const { slug, title, description, type, stage, date, lang } = Astro.props;
       </a>
     </h3>
     <p class="mt-2 text-base-content/70">{description}</p>
+    {translations.length > 0 && (
+      <div class="mt-2">
+        <LanguageToggle current={lang} translations={translations} compact />
+      </div>
+    )}
   </div>
 </article>

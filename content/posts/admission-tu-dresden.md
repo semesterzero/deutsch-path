@@ -10,7 +10,6 @@ university: TU Dresden
 city: Dresden
 intake: WS25
 tags: [university, documents]
-translationGroup: admission-tu-dresden
 draft: false
 ---
 

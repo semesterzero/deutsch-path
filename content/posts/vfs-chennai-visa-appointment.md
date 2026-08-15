@@ -10,7 +10,6 @@ university: TU Dresden
 city: Dresden
 intake: WS25
 tags: [vfs, documents]
-translationGroup: vfs-chennai-visa-appointment
 draft: false
 ---
 

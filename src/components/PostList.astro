@@ -1,19 +1,24 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import PostCard from './PostCard.astro';
+import { dedupeByTranslationGroup, getTranslations } from '../lib/posts';
 
 interface Props {
+  // Pass the full (un-deduped) post list — PostList collapses each
+  // translation group down to one row itself, so a story with an EN and DE
+  // version shows once, with a language switch inline, not as two rows.
   posts: CollectionEntry<'posts'>[];
   emptyMessage?: string;
 }
 
 const { posts, emptyMessage } = Astro.props;
+const representatives = dedupeByTranslationGroup(posts);
 ---
 
-{posts.length === 0 && emptyMessage && <p class="text-base-content/60">{emptyMessage}</p>}
+{representatives.length === 0 && emptyMessage && <p class="text-base-content/60">{emptyMessage}</p>}
 
 <div>
-  {posts.map((post) => (
+  {representatives.map((post) => (
     <PostCard
       slug={post.id}
       title={post.data.title}
@@ -22,6 +27,7 @@ const { posts, emptyMessage } = Astro.props;
       stage={post.data.stage}
       date={post.data.date}
       lang={post.data.lang}
+      translations={getTranslations(post, posts)}
     />
   ))}
 </div>

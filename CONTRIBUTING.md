@@ -74,41 +74,42 @@ free text.
 
 ## Writing a multilingual post
 
-Every post defaults to English (`lang: en`). To add a translation of an
-existing post — or write one from the start in another language — add two
-fields:
+Every post defaults to English (`lang: en`). A translation is **not** a new
+story — it's another version of the same one. The site treats it that way
+too: a post with a translation shows up once in every listing, with a small
+language switch on the card, not as two separate posts.
 
-```yaml
-lang: de                          # currently en | de
-translationGroup: your-post-slug  # shared across every language version
-```
+To add a translation of an existing post:
 
-`translationGroup` is any string, as long as it's identical on every
-language version of the same post — it's how the site links them together
-and shows the "Also in: …" toggle on the post page. A sensible default is
-the English post's own filename (without `.md`).
+1. Find the original post's filename, e.g.
+   `content/posts/vfs-chennai-visa-appointment.md`. You don't need to add
+   anything to it — an untranslated (or primary) post needs no
+   `translationGroup` at all; the site treats its own filename as its group.
+2. Create the translated file with a language-suffixed filename, e.g.
+   `content/posts/vfs-chennai-visa-appointment-de.md`, and set:
 
-In practice:
+   ```yaml
+   lang: de                                          # currently en | de
+   translationGroup: vfs-chennai-visa-appointment    # the ORIGINAL post's filename, without .md
+   ```
 
-1. Write (or already have) the English post, e.g.
-   `content/posts/vfs-chennai-visa-appointment.md`.
-2. Add `translationGroup: vfs-chennai-visa-appointment` to its frontmatter.
-3. Create the translated file with a language-suffixed filename, e.g.
-   `content/posts/vfs-chennai-visa-appointment-de.md`, with `lang: de` and
-   the **same** `translationGroup`. Everything else in the frontmatter
-   (`type`, `stage`, `university`, `city`, `intake`, `tags`, `author`) should
-   match the original — only `title`, `description`, `lang`, and the body
-   are translated.
+3. Keep everything else in the frontmatter (`type`, `stage`, `university`,
+   `city`, `intake`, `tags`, `author`) the same as the original — only
+   `title`, `description`, `lang`, and the body are translated.
+
+That's the only rule: **`translationGroup` on a translation must exactly
+match the original post's filename.** The build fails with a clear error if
+two posts in the same group ever claim the same `lang`.
 
 A post doesn't need a translation to be published — most won't have one.
-There's no requirement to add a `de` version of every post; add one when a
-translation actually exists and is accurate, not as a placeholder.
+Add one when a translation actually exists and is accurate, not as a
+placeholder.
 
 Currently only `en` and `de` are supported (see `LANGUAGES` in
 `src/lib/constants.ts`) — add a new language there first if you need one.
-There's no site-wide language switcher yet, only the per-post toggle; the
-rest of the UI (nav, labels) stays in English regardless of a post's
-language.
+There's no site-wide language switcher; the rest of the UI (nav, labels)
+stays in English regardless of a post's language — only the post itself
+switches.
 
 ## Content rules
 

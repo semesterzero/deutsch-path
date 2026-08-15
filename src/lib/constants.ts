@@ -108,3 +108,7 @@ export const LANGUAGE_LABELS: Record<Language, string> = {
   en: 'English',
   de: 'Deutsch',
 };
+
+// The language a translation group falls back to when picking which
+// version to show in a listing (post cards, RSS).
+export const DEFAULT_LANGUAGE: Language = 'en';

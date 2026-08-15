@@ -11,8 +11,11 @@ const baseSchema = z.object({
   lastVerified: z.coerce.date(),
   author: reference('authors'),
   lang: z.enum(LANGUAGES).default('en'),
-  // Shared across every language variant of the same post, so the language
-  // toggle can find them. Leave unset for posts with no translation.
+  // Shared across every language variant of the same post, so listings can
+  // treat them as one story and the language toggle can find them. Leave
+  // unset on the primary/first-written post — it defaults to that post's own
+  // filename (see lib/posts.ts) — and set it on translations to point at the
+  // primary post's slug.
   translationGroup: z.string().optional(),
   university: z.enum(UNIVERSITIES).optional(),
   city: z.enum(CITIES).optional(),
