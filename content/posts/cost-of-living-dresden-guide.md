@@ -7,6 +7,7 @@ date: 2025-01-10
 lastVerified: 2025-01-10
 author: priya-dresden
 tags: [cost-of-living, housing]
+translationGroup: cost-of-living-dresden-guide
 draft: false
 ---
 
@@ -19,8 +20,31 @@ against). It deliberately avoids stating specific numbers that could be
 mistaken for current, real figures.
 
 Dresden is smaller and generally cheaper than Berlin or Munich, but costs
-still add up in the same broad categories: rent, health insurance, transit,
-and food. A real guide here would cover the general shape of those costs
-— with links out to official or author-verified sources for any specific
-numbers, updated in place as facts change rather than superseded by a new
-post.
+still add up in the same broad categories.
+
+## Rent
+
+Shared flats tend to be the cheapest way in, and university-run dorms have
+long waitlists — apply as early as your visa timeline allows. Expect a
+security deposit on top of the first month, usually a multiple of rent.
+
+## Health insurance
+
+Mandatory for enrollment. Public providers are broadly similar in price;
+private ones can be cheaper up front but are a harder decision to reverse
+later, so it's worth reading the fine print before committing.
+
+## Transit
+
+Most universities bundle a semester ticket into enrollment fees, covering
+local transit — worth checking before buying anything separately.
+
+## Food
+
+Cooking at home is meaningfully cheaper than eating out, and student
+cafeterias (Mensa) are cheaper again than either. Groceries are the one
+category where prices are easiest to track for yourself once you arrive.
+
+A real guide here would link out to official or author-verified sources for
+any specific numbers, updated in place as facts change rather than
+superseded by a new post.

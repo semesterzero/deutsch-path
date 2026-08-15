@@ -3,25 +3,37 @@
 // or in content.config.ts.
 
 export const STAGES = [
+  'general',
   'applying',
   'admission',
   'visa',
   'arrival',
   'studying',
   'working',
-  'general',
 ] as const;
 
 export type Stage = (typeof STAGES)[number];
 
 export const STAGE_LABELS: Record<Stage, string> = {
+  general: 'General',
   applying: 'Applying',
   admission: 'Admission',
   visa: 'Visa',
   arrival: 'Arrival',
   studying: 'Studying',
   working: 'Working',
-  general: 'General',
+};
+
+// Lucide icon names (astro-icon `lucide:` collection) shown next to each
+// stage in the nav.
+export const STAGE_ICONS: Record<Stage, string> = {
+  general: 'lucide:compass',
+  applying: 'lucide:file-text',
+  admission: 'lucide:graduation-cap',
+  visa: 'lucide:stamp',
+  arrival: 'lucide:plane-landing',
+  studying: 'lucide:book-open',
+  working: 'lucide:briefcase',
 };
 
 // Starter list — extend as posts reference new universities.

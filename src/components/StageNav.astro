@@ -1,5 +1,6 @@
 ---
-import { STAGES, STAGE_LABELS } from '../lib/constants';
+import { Icon } from 'astro-icon/components';
+import { STAGES, STAGE_ICONS, STAGE_LABELS } from '../lib/constants';
 import { withBase } from '../lib/url';
 ---
 
@@ -7,7 +8,10 @@ import { withBase } from '../lib/url';
   {STAGES.map((stage, i) => (
     <>
       {i > 0 && <span aria-hidden="true" class="text-base-content/30">·</span>}
-      <a class="hover:text-base-content" href={withBase(`/stage/${stage}/`)}>{STAGE_LABELS[stage]}</a>
+      <a class="inline-flex items-center gap-1 hover:text-base-content" href={withBase(`/stage/${stage}/`)}>
+        <Icon name={STAGE_ICONS[stage]} width={12} height={12} />
+        {STAGE_LABELS[stage]}
+      </a>
     </>
   ))}
 </nav>

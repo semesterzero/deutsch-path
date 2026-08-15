@@ -72,6 +72,44 @@ allowlists in `src/lib/constants.ts`. If the build fails because your value
 isn't recognized, add it there — don't work around it by leaving the field
 free text.
 
+## Writing a multilingual post
+
+Every post defaults to English (`lang: en`). To add a translation of an
+existing post — or write one from the start in another language — add two
+fields:
+
+```yaml
+lang: de                          # currently en | de
+translationGroup: your-post-slug  # shared across every language version
+```
+
+`translationGroup` is any string, as long as it's identical on every
+language version of the same post — it's how the site links them together
+and shows the "Also in: …" toggle on the post page. A sensible default is
+the English post's own filename (without `.md`).
+
+In practice:
+
+1. Write (or already have) the English post, e.g.
+   `content/posts/vfs-chennai-visa-appointment.md`.
+2. Add `translationGroup: vfs-chennai-visa-appointment` to its frontmatter.
+3. Create the translated file with a language-suffixed filename, e.g.
+   `content/posts/vfs-chennai-visa-appointment-de.md`, with `lang: de` and
+   the **same** `translationGroup`. Everything else in the frontmatter
+   (`type`, `stage`, `university`, `city`, `intake`, `tags`, `author`) should
+   match the original — only `title`, `description`, `lang`, and the body
+   are translated.
+
+A post doesn't need a translation to be published — most won't have one.
+There's no requirement to add a `de` version of every post; add one when a
+translation actually exists and is accurate, not as a placeholder.
+
+Currently only `en` and `de` are supported (see `LANGUAGES` in
+`src/lib/constants.ts`) — add a new language there first if you need one.
+There's no site-wide language switcher yet, only the per-post toggle; the
+rest of the UI (nav, labels) stays in English regardless of a post's
+language.
+
 ## Content rules
 
 - **Freshness.** Keep `lastVerified` accurate. If you're updating a post
