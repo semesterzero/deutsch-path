@@ -2,6 +2,7 @@
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import icon from 'astro-icon';
+import sitemap from '@astrojs/sitemap';
 
 // This is a GitHub Pages *project* site (org: semesterzero, repo: deutsch-path),
 // not an org-root (semesterzero.github.io) site — base must stay '/deutsch-path/'
@@ -10,7 +11,7 @@ import icon from 'astro-icon';
 export default defineConfig({
   site: 'https://semesterzero.github.io/deutsch-path',
   base: '/deutsch-path/',
-  integrations: [icon()],
+  integrations: [icon(), sitemap()],
   vite: {
     plugins: [tailwindcss()],
   },

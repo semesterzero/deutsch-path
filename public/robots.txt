@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://semesterzero.github.io/deutsch-path/sitemap-index.xml
