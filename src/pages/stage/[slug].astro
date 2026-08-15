@@ -1,8 +1,8 @@
 ---
-import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import PostCard from '../../components/PostCard.astro';
+import PostList from '../../components/PostList.astro';
 import { STAGES, STAGE_LABELS } from '../../lib/constants';
+import { getSortedPosts } from '../../lib/posts';
 
 export async function getStaticPaths() {
   // Every stage always gets a route, even with zero posts — it's a fixed
@@ -13,25 +13,11 @@ export async function getStaticPaths() {
 const { slug } = Astro.params;
 const stage = slug as (typeof STAGES)[number];
 
-const posts = (await getCollection('posts', ({ data }) => !data.draft && data.stage === stage)).sort(
-  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
-);
+const posts = await getSortedPosts((post) => post.data.stage === stage);
 ---
 
 <BaseLayout title={STAGE_LABELS[stage]}>
   <h1 class="font-display text-3xl mb-8">{STAGE_LABELS[stage]}</h1>
 
-  {posts.length === 0 && <p class="text-base-content/60">No posts for this stage yet.</p>}
-
-  {posts.map((post) => (
-    <PostCard
-      slug={post.id}
-      title={post.data.title}
-      description={post.data.description}
-      type={post.data.type}
-      stage={post.data.stage}
-      date={post.data.date}
-      lang={post.data.lang}
-    />
-  ))}
+  <PostList posts={posts} emptyMessage="No posts for this stage yet." />
 </BaseLayout>

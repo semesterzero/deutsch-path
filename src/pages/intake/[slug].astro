@@ -1,7 +1,8 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import PostCard from '../../components/PostCard.astro';
+import PostList from '../../components/PostList.astro';
+import { sortPostsByDateDesc } from '../../lib/posts';
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts', ({ data }) => !data.draft && data.intake);
@@ -21,21 +22,11 @@ export async function getStaticPaths() {
 }
 
 const { intake, posts } = Astro.props;
-const sorted = [...posts].sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const sorted = sortPostsByDateDesc(posts);
 ---
 
 <BaseLayout title={intake}>
   <h1 class="font-display text-3xl mb-8">{intake}</h1>
 
-  {sorted.map((post) => (
-    <PostCard
-      slug={post.id}
-      title={post.data.title}
-      description={post.data.description}
-      type={post.data.type}
-      stage={post.data.stage}
-      date={post.data.date}
-      lang={post.data.lang}
-    />
-  ))}
+  <PostList posts={sorted} />
 </BaseLayout>

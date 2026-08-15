@@ -2,13 +2,14 @@
 import { Icon } from 'astro-icon/components';
 import StageNav from '../components/StageNav.astro';
 import GermanMark from '../components/GermanMark.astro';
+import { REPO_URL, type Language } from '../lib/constants';
 import { withBase } from '../lib/url';
 import '../styles/global.css';
 
 interface Props {
   title: string;
   description?: string;
-  lang?: string;
+  lang?: Language;
 }
 
 const {
@@ -35,11 +36,11 @@ const {
       </a>
       <nav aria-label="Primary" class="flex flex-wrap gap-6 text-xs tracking-widest uppercase text-base-content/70">
         <a class="hover:text-base-content" href={withBase('/')}>Home</a>
-        <a class="inline-flex items-center gap-1 text-accent hover:text-accent/70" href="https://github.com/semesterzero/deutsch-path/blob/main/CONTRIBUTING.md">
+        <a class="inline-flex items-center gap-1 text-accent hover:text-accent/70" href={`${REPO_URL}/blob/main/CONTRIBUTING.md`}>
           Write a post
           <Icon name="lucide:arrow-up-right" width={13} height={13} />
         </a>
-        <a class="inline-flex items-center gap-1 hover:text-base-content" href="https://github.com/semesterzero/deutsch-path">
+        <a class="inline-flex items-center gap-1 hover:text-base-content" href={REPO_URL}>
           <Icon name="lucide:github" width={14} height={14} />
           GitHub
         </a>
@@ -62,7 +63,7 @@ const {
         <p>
           Code is MIT licensed. Content is CC BY 4.0 — authors keep copyright
           and grant publishing rights. See
-          <a class="underline hover:text-base-content" href="https://github.com/semesterzero/deutsch-path/blob/main/CONTRIBUTING.md">CONTRIBUTING</a> to write a post.
+          <a class="underline hover:text-base-content" href={`${REPO_URL}/blob/main/CONTRIBUTING.md`}>CONTRIBUTING</a> to write a post.
         </p>
       </div>
       <div class="mx-auto mt-8 max-w-md border-t border-base-300 pt-6 text-base-content/50">

@@ -1,6 +1,7 @@
 ---
 import { getCollection, getEntry, render } from 'astro:content';
 import PostLayout from '../../layouts/PostLayout.astro';
+import { getSortedPosts } from '../../lib/posts';
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts', ({ data }) => !data.draft);
@@ -16,10 +17,9 @@ const author = await getEntry(post.data.author);
 
 let translations: { lang: typeof post.data.lang; slug: string }[] = [];
 if (post.data.translationGroup) {
-  const allPosts = await getCollection('posts', ({ data }) => !data.draft);
-  translations = allPosts
-    .filter((p) => p.data.translationGroup === post.data.translationGroup && p.id !== post.id)
-    .map((p) => ({ lang: p.data.lang, slug: p.id }));
+  const group = post.data.translationGroup;
+  const allPosts = await getSortedPosts((p) => p.data.translationGroup === group && p.id !== post.id);
+  translations = allPosts.map((p) => ({ lang: p.data.lang, slug: p.id }));
 }
 ---
 

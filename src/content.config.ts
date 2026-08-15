@@ -1,11 +1,11 @@
 import { defineCollection, reference, z } from 'astro:content';
 import { glob } from 'astro/loaders';
-import { CITIES, LANGUAGES, STAGES, TAGS, UNIVERSITIES } from './lib/constants';
+import { CITIES, LANGUAGES, POST_TYPES, STAGES, TAGS, UNIVERSITIES, UNIVERSITY_CITY } from './lib/constants';
 
 const baseSchema = z.object({
   title: z.string().min(1),
   description: z.string().min(40).max(160),
-  type: z.enum(['experience', 'guide']),
+  type: z.enum(POST_TYPES),
   stage: z.enum(STAGES),
   date: z.coerce.date(),
   lastVerified: z.coerce.date(),
@@ -49,6 +49,14 @@ const postSchema = baseSchema.superRefine((data, ctx) => {
         });
       }
     }
+  }
+
+  if (data.university && data.city && UNIVERSITY_CITY[data.university] !== data.city) {
+    ctx.addIssue({
+      code: z.ZodIssueCode.custom,
+      path: ['city'],
+      message: `city "${data.city}" doesn't match "${data.university}" — expected "${UNIVERSITY_CITY[data.university]}"`,
+    });
   }
 });
 

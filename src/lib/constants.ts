@@ -2,6 +2,21 @@
 // filter pages, and nav. Add new values here — never inline in a component
 // or in content.config.ts.
 
+// Canonical GitHub URL — update here if the repo ever moves again, instead
+// of hunting for hardcoded links across layouts/components.
+export const REPO_URL = 'https://github.com/semesterzero/deutsch-path';
+
+export const POST_TYPES = ['experience', 'guide'] as const;
+
+export type PostType = (typeof POST_TYPES)[number];
+
+// Tailwind color class for the type badge — kept next to POST_TYPES so a
+// new type can't be added without deciding how it's colored.
+export const POST_TYPE_COLOR: Record<PostType, string> = {
+  experience: 'text-accent',
+  guide: 'text-secondary',
+};
+
 export const STAGES = [
   'general',
   'applying',
@@ -57,6 +72,17 @@ export const CITIES = [
 ] as const;
 
 export type City = (typeof CITIES)[number];
+
+// Each university's home city — validated against a post's `city` field so
+// the two can't silently drift apart (e.g. `university: TU Dresden` paired
+// with `city: Berlin`). Keep in sync with UNIVERSITIES/CITIES above.
+export const UNIVERSITY_CITY: Record<University, City> = {
+  'TU Berlin': 'Berlin',
+  'TU Munich': 'Munich',
+  'RWTH Aachen': 'Aachen',
+  'University of Stuttgart': 'Stuttgart',
+  'TU Dresden': 'Dresden',
+};
 
 // Tags allowlist — keep short; a post may use at most 5.
 export const TAGS = [
