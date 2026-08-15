@@ -39,6 +39,10 @@ const {
       </a>
       <nav aria-label="Primary" class="flex flex-wrap gap-6 text-xs tracking-widest uppercase text-base-content/70">
         <a class="hover:text-base-content" href={withBase('/')}>Home</a>
+        <a class="inline-flex items-center gap-1 hover:text-base-content" href={withBase('/search/')}>
+          <Icon name="lucide:search" width={13} height={13} />
+          Search
+        </a>
         <a class="inline-flex items-center gap-1 text-accent hover:text-accent/70" href={newPostGitHubUrl()}>
           Write a post
           <Icon name="lucide:arrow-up-right" width={13} height={13} />

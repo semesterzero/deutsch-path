@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../lib/url';
+import { DEFAULT_LANGUAGE, LANGUAGES } from '../lib/constants';
+
+// Pagefind builds one index per language and, by default, a PagefindUI
+// instance only loads the index matching its own page's <html lang> (this
+// page's, which is DEFAULT_LANGUAGE). Every other language needs to be
+// merged in explicitly or its posts are invisible to search entirely.
+const bundlePath = withBase('/pagefind/');
+const otherLanguages = LANGUAGES.filter((lang) => lang !== DEFAULT_LANGUAGE);
+
+// Known limitation, not a bug in this integration: Pagefind's German
+// stemming (via the Snowball stemmer) doesn't reliably match every German
+// word form — some standalone words (e.g. "Zulassung") won't surface a
+// result even though the same content matches fine as part of a longer
+// phrase, or via compound/exact-match words like "Bewerbungsportal" or
+// "Dresden". This is upstream: https://pagefind.app/docs/multilingual/ and
+// https://github.com/snowballstem/snowball/issues/139. English search is
+// unaffected.
+---
+
+<BaseLayout title="Search" description="Search Deutsch Path posts.">
+  <h1 class="font-display text-3xl mb-8">Search</h1>
+  <div id="search"></div>
+</BaseLayout>
+
+<link rel="stylesheet" href={withBase('/pagefind/pagefind-ui.css')} />
+<script is:inline src={withBase('/pagefind/pagefind-ui.js')}></script>
+<script is:inline define:vars={{ selector: '#search', bundlePath, otherLanguages }}>
+  window.addEventListener('DOMContentLoaded', () => {
+    // PagefindUI is a global provided by pagefind-ui.js above. Its index is
+    // built by `pagefind --site dist` (runs as the `postbuild` script) — it
+    // only exists after a production build, so this page has nothing to
+    // search under `pnpm run dev`. Test with `pnpm run build && pnpm run preview`.
+    // eslint-disable-next-line no-undef
+    new PagefindUI({
+      element: selector,
+      showSubResults: true,
+      mergeIndex: otherLanguages.map((language) => ({ bundlePath, language })),
+    });
+  });
+</script>
+
+<style is:global>
+  #search {
+    --pagefind-ui-primary: var(--color-accent);
+    --pagefind-ui-text: var(--color-base-content);
+    --pagefind-ui-background: var(--color-base-100);
+    --pagefind-ui-border: var(--color-base-300);
+    --pagefind-ui-border-width: 1px;
+    --pagefind-ui-border-radius: 0.125rem;
+    --pagefind-ui-image-border-radius: 0.125rem;
+    --pagefind-ui-font: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+  }
+</style>
