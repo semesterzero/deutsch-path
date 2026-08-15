@@ -8,9 +8,12 @@ on personal accounts from real people — that's the whole point.
 
 1. **Pull request (the default path).** Fork this repo, add a markdown file
    under `content/posts/`, open a PR. Use the checklist in the PR template.
-2. **Browser editing.** You can do the same thing through GitHub's web UI —
-   browse to `content/posts/`, click "Add file" → "Create new file", paste in
-   the frontmatter template below, and open a PR. No git required.
+2. **Browser editing.** You can do the same thing through GitHub's web UI, no
+   git required. The **"Write a post"** link in the site's nav opens GitHub's
+   new-file editor with the frontmatter template already filled in — fill in
+   your details and open a PR straight from the browser. (You can also do
+   this manually: browse to `content/posts/`, click "Add file" → "Create new
+   file", and paste in the template below.)
 3. **No-git intake.** Not built yet. If you'd rather not use GitHub at all, or
    your post is sensitive, contact the maintainer directly and they can commit
    it on your behalf.
