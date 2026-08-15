@@ -16,7 +16,8 @@ const { slug, title, description, type, stage, date } = Astro.props;
 
 <article class="grid grid-cols-1 gap-2 border-b border-base-300 py-6 first:pt-0 md:grid-cols-[10rem_1fr] md:gap-8">
   <p class="text-xs tracking-widest uppercase text-base-content/50">
-    {type} · {STAGE_LABELS[stage]}
+    <span class={type === 'experience' ? 'text-accent' : 'text-secondary'}>{type}</span>
+    {' '}· {STAGE_LABELS[stage]}
     <br />
     <time datetime={date.toISOString()}>{date.toISOString().slice(0, 10)}</time>
   </p>

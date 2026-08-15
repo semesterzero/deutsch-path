@@ -36,7 +36,8 @@ const {
 <BaseLayout title={title} description={description}>
   <article>
     <p class="text-xs tracking-widest uppercase text-base-content/50">
-      {type} · {STAGE_LABELS[stage]} ·{' '}
+      <span class={type === 'experience' ? 'text-accent' : 'text-secondary'}>{type}</span>
+      {' '}· {STAGE_LABELS[stage]} ·{' '}
       <time datetime={date.toISOString()}>{date.toISOString().slice(0, 10)}</time>
       {' '}· by {authorName}
     </p>
@@ -63,7 +64,7 @@ const {
     )}
 
     {tags.length > 0 && (
-      <ul class="mt-6 flex flex-wrap gap-x-3 gap-y-1 text-xs tracking-widest uppercase text-base-content/50">
+      <ul class="mt-6 flex flex-wrap gap-x-3 gap-y-1 text-xs tracking-widest uppercase text-info">
         {tags.map((tag) => <li>#{tag}</li>)}
       </ul>
     )}
