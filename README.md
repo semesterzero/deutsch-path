@@ -1,14 +1,57 @@
 # Deutsch Path
 
-A [Semester Zero](https://github.com/semesterzero) project — an open-source
-blog where Indian students share real experiences of moving to Germany for a
-Master's: applications, APS, visa appointments, blocked accounts, arrival,
-studying, working.
-
-These are personal accounts, not immigration or legal advice. See the
-disclaimer on every post.
+A [Semester Zero](https://github.com/semesterzero) project.
 
 **Live site:** https://semesterzero.github.io/deutsch-path/
+
+## What this is
+
+Applying to a German Master's program mostly means piecing together the real
+process from scattered forum threads, Telegram groups, and outdated blog
+posts — most of it either official-but-vague or detailed-but-unverifiable.
+Deutsch Path is a single place for **first-hand accounts** of that process,
+written by the people who actually went through it: what the VFS appointment
+was actually like, what the TU Dresden admission portal actually asked for,
+what a blocked account actually costs to open.
+
+It's not a wiki and it's not a forum. Every post has a named (or
+pseudonymous) author standing behind it, a date, and a note on when the facts
+were last checked — so readers can tell how current something is instead of
+guessing.
+
+## Who it's for
+
+- **Indian students at any stage** of moving to Germany for a Master's —
+  from still deciding where to apply, through visa and blocked account
+  paperwork, to already there and figuring out housing, part-time work, or
+  everyday life.
+- **People who've already been through it** and want to write down what
+  actually happened for the next batch of applicants — which is also how the
+  site grows. See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+It is explicitly **not** immigration or legal advice, and doesn't claim to
+be — every post carries that disclaimer, because the point is "here's what
+happened to me," not "here's what you should do."
+
+## What belongs here
+
+Two kinds of posts, both organized under a shared stage taxonomy
+(`applying → admission → visa → arrival → studying → working`, plus
+`general` for anything that doesn't fit that timeline — cost of living,
+culture, language learning):
+
+- **Experience posts** — a personal account anchored to a specific
+  university, city, and intake. Ages fast on purpose: visa rules and fees
+  change yearly, so these carry a freshness banner once a year old.
+- **Guides** — general reference not tied to one person's application
+  (e.g. "cost of living in Dresden"). Updated in place as facts change,
+  rather than replaced by a new post.
+
+What doesn't belong: content copied from university sites, forums, or
+Telegram groups (link out instead); fees, deadlines, or document lists that
+can't be traced back to the author's own experience or a linked official
+source; and anything written as advice rather than an account of what
+happened. See [CONTRIBUTING.md](CONTRIBUTING.md) for the full content rules.
 
 ## Stack
 
