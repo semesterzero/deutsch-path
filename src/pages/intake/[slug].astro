@@ -1,0 +1,40 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts', ({ data }) => !data.draft && data.intake);
+  const byIntake = new Map<string, typeof posts>();
+
+  for (const post of posts) {
+    const intake = post.data.intake!;
+    const existing = byIntake.get(intake) ?? [];
+    existing.push(post);
+    byIntake.set(intake, existing);
+  }
+
+  return [...byIntake.entries()].map(([intake, posts]) => ({
+    params: { slug: intake },
+    props: { intake, posts },
+  }));
+}
+
+const { intake, posts } = Astro.props;
+const sorted = [...posts].sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<BaseLayout title={intake}>
+  <h1>{intake}</h1>
+
+  {sorted.map((post) => (
+    <PostCard
+      slug={post.id}
+      title={post.data.title}
+      description={post.data.description}
+      type={post.data.type}
+      stage={post.data.stage}
+      date={post.data.date}
+    />
+  ))}
+</BaseLayout>

@@ -1,0 +1,32 @@
+---
+interface Props {
+  lastVerified: Date;
+}
+
+const { lastVerified } = Astro.props;
+
+// Evaluated at build time — a static site can only be as fresh as its last
+// deploy, it can't check this live.
+const twelveMonthsMs = 365 * 24 * 60 * 60 * 1000;
+const isStale = Date.now() - lastVerified.getTime() > twelveMonthsMs;
+---
+
+{isStale && (
+  <p class="freshness-banner">
+    Facts in this post were last verified on{' '}
+    {lastVerified.toISOString().slice(0, 10)}, more than a year ago. Visa
+    rules, fees, and requirements change yearly — double-check anything
+    specific before relying on it.
+  </p>
+)}
+
+<style>
+  .freshness-banner {
+    font-size: 0.85rem;
+    background: #fff6e0;
+    border: 1px solid #e8c866;
+    border-radius: 4px;
+    padding: 0.6rem 0.8rem;
+    margin: 1rem 0;
+  }
+</style>

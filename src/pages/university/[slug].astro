@@ -1,0 +1,43 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+import { slugify } from '../../lib/url';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts', ({ data }) => !data.draft && data.university);
+  const byUniversity = new Map<string, typeof posts>();
+
+  for (const post of posts) {
+    const university = post.data.university!;
+    const slug = slugify(university);
+    const existing = byUniversity.get(slug) ?? [];
+    existing.push(post);
+    byUniversity.set(slug, existing);
+  }
+
+  return [...byUniversity.entries()].map(([slug, posts]) => ({
+    params: { slug },
+    props: { posts },
+  }));
+}
+
+const { posts } = Astro.props;
+const university = posts[0].data.university!;
+const sorted = [...posts].sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<BaseLayout title={university}>
+  <h1>{university}</h1>
+
+  {sorted.map((post) => (
+    <PostCard
+      slug={post.id}
+      title={post.data.title}
+      description={post.data.description}
+      type={post.data.type}
+      stage={post.data.stage}
+      date={post.data.date}
+    />
+  ))}
+</BaseLayout>

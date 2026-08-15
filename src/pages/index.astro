@@ -1,0 +1,28 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PostCard from '../components/PostCard.astro';
+
+const posts = (await getCollection('posts', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+---
+
+<BaseLayout title="Home">
+  <h1>Semester Zero</h1>
+  <p>
+    Real experiences of moving from India to Germany for a Master's — applications,
+    APS, visa appointments, blocked accounts, arrival, studying, working.
+  </p>
+
+  {posts.map((post) => (
+    <PostCard
+      slug={post.id}
+      title={post.data.title}
+      description={post.data.description}
+      type={post.data.type}
+      stage={post.data.stage}
+      date={post.data.date}
+    />
+  ))}
+</BaseLayout>

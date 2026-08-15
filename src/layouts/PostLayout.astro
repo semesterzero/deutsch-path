@@ -1,0 +1,111 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Disclaimer from '../components/Disclaimer.astro';
+import FreshnessBanner from '../components/FreshnessBanner.astro';
+import { STAGE_LABELS, type Stage } from '../lib/constants';
+
+interface Props {
+  title: string;
+  description: string;
+  type: 'experience' | 'guide';
+  stage: Stage;
+  date: Date;
+  lastVerified: Date;
+  authorName: string;
+  university?: string;
+  city?: string;
+  intake?: string;
+  tags: string[];
+}
+
+const {
+  title,
+  description,
+  type,
+  stage,
+  date,
+  lastVerified,
+  authorName,
+  university,
+  city,
+  intake,
+  tags,
+} = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+  <article>
+    <p class="meta">
+      <span class="badge">{type}</span>
+      <span class="badge">{STAGE_LABELS[stage]}</span>
+      <time datetime={date.toISOString()}>{date.toISOString().slice(0, 10)}</time>
+      · by {authorName}
+    </p>
+    <h1>{title}</h1>
+
+    <Disclaimer />
+    <FreshnessBanner lastVerified={lastVerified} />
+
+    <div class="body">
+      <slot />
+    </div>
+
+    {type === 'experience' && (
+      <dl class="details">
+        <dt>University</dt>
+        <dd>{university}</dd>
+        <dt>City</dt>
+        <dd>{city}</dd>
+        <dt>Intake</dt>
+        <dd>{intake}</dd>
+      </dl>
+    )}
+
+    {tags.length > 0 && (
+      <ul class="tags">
+        {tags.map((tag) => <li>#{tag}</li>)}
+      </ul>
+    )}
+  </article>
+</BaseLayout>
+
+<style>
+  .meta {
+    font-size: 0.8rem;
+    color: #666;
+  }
+
+  .badge {
+    border: 1px solid #ccc;
+    border-radius: 999px;
+    padding: 0.1rem 0.5rem;
+    text-transform: capitalize;
+    margin-right: 0.25rem;
+  }
+
+  .details {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.25rem 0.75rem;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+  }
+
+  .details dt {
+    color: #666;
+  }
+
+  .details dd {
+    margin: 0;
+  }
+
+  .tags {
+    list-style: none;
+    display: flex;
+    gap: 0.5rem;
+    padding: 0;
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    color: #666;
+  }
+</style>
