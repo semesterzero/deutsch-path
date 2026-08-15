@@ -1,5 +1,89 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 @plugin "daisyui" {
-  themes: light --default, dark --prefersdark;
+  themes: editorial --default, editorial-dark --prefersdark;
+}
+
+/* Editorial light theme: cream paper, navy ink — matches the reference aesthetic. */
+@plugin "daisyui/theme" {
+  name: "editorial";
+  default: true;
+  prefersdark: false;
+  color-scheme: light;
+  --color-base-100: oklch(97% 0.012 85);
+  --color-base-200: oklch(94% 0.014 85);
+  --color-base-300: oklch(89% 0.016 85);
+  --color-base-content: oklch(18% 0.02 270);
+  --color-primary: oklch(27% 0.06 270);
+  --color-primary-content: oklch(97% 0.012 85);
+  --color-secondary: oklch(45% 0.04 270);
+  --color-secondary-content: oklch(97% 0.012 85);
+  --color-accent: oklch(60% 0.14 55);
+  --color-accent-content: oklch(18% 0.02 270);
+  --color-neutral: oklch(27% 0.06 270);
+  --color-neutral-content: oklch(97% 0.012 85);
+  --color-info: oklch(55% 0.1 240);
+  --color-info-content: oklch(97% 0.012 85);
+  --color-success: oklch(50% 0.1 150);
+  --color-success-content: oklch(97% 0.012 85);
+  --color-warning: oklch(60% 0.14 55);
+  --color-warning-content: oklch(18% 0.02 270);
+  --color-error: oklch(50% 0.18 25);
+  --color-error-content: oklch(97% 0.012 85);
+  --radius-selector: 0.125rem;
+  --radius-field: 0.125rem;
+  --radius-box: 0.125rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
+
+/* Editorial dark theme: navy paper, cream ink — same system, inverted. */
+@plugin "daisyui/theme" {
+  name: "editorial-dark";
+  default: false;
+  prefersdark: true;
+  color-scheme: dark;
+  --color-base-100: oklch(22% 0.03 270);
+  --color-base-200: oklch(18% 0.03 270);
+  --color-base-300: oklch(28% 0.035 270);
+  --color-base-content: oklch(95% 0.014 85);
+  --color-primary: oklch(95% 0.014 85);
+  --color-primary-content: oklch(22% 0.03 270);
+  --color-secondary: oklch(80% 0.02 85);
+  --color-secondary-content: oklch(18% 0.03 270);
+  --color-accent: oklch(70% 0.14 55);
+  --color-accent-content: oklch(18% 0.02 270);
+  --color-neutral: oklch(90% 0.014 85);
+  --color-neutral-content: oklch(22% 0.03 270);
+  --color-info: oklch(70% 0.1 240);
+  --color-info-content: oklch(18% 0.03 270);
+  --color-success: oklch(70% 0.1 150);
+  --color-success-content: oklch(18% 0.03 270);
+  --color-warning: oklch(70% 0.14 55);
+  --color-warning-content: oklch(18% 0.03 270);
+  --color-error: oklch(65% 0.18 25);
+  --color-error-content: oklch(18% 0.03 270);
+  --radius-selector: 0.125rem;
+  --radius-field: 0.125rem;
+  --radius-box: 0.125rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
+
+@import "@fontsource-variable/fraunces/opsz.css";
+@import "@fontsource-variable/inter/wght.css";
+
+@theme {
+  --font-display: "Fraunces Variable", ui-serif, Georgia, serif;
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  font-family: var(--font-sans);
 }

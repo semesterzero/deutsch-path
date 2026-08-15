@@ -3,8 +3,11 @@ import { STAGES, STAGE_LABELS } from '../lib/constants';
 import { withBase } from '../lib/url';
 ---
 
-<nav aria-label="Stages" class="tabs tabs-box tabs-sm flex-wrap">
-  {STAGES.map((stage) => (
-    <a class="tab" href={withBase(`/stage/${stage}/`)}>{STAGE_LABELS[stage]}</a>
+<nav aria-label="Stages" class="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs tracking-widest uppercase text-base-content/60">
+  {STAGES.map((stage, i) => (
+    <>
+      {i > 0 && <span aria-hidden="true" class="text-base-content/30">·</span>}
+      <a class="hover:text-base-content" href={withBase(`/stage/${stage}/`)}>{STAGE_LABELS[stage]}</a>
+    </>
   ))}
 </nav>

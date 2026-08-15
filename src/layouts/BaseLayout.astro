@@ -20,24 +20,32 @@ const { title, description = 'Real experiences of moving from India to Germany f
     <title>{title} · Semester Zero</title>
     <meta name="description" content={description} />
   </head>
-  <body class="min-h-screen bg-base-100 text-base-content flex flex-col">
-    <header class="navbar border-b border-base-300 mx-auto max-w-3xl px-4">
-      <div class="flex-1">
-        <a class="text-lg font-bold" href={withBase('/')}>Semester Zero</a>
+  <body class="bg-primary">
+    <div class="mx-2 my-2 md:mx-6 md:my-6 flex min-h-[calc(100vh-1rem)] md:min-h-[calc(100vh-3rem)] flex-col bg-base-100 text-base-content">
+      <header class="flex flex-wrap items-center justify-between gap-4 border-b border-base-300 px-6 py-6 md:px-10">
+        <a href={withBase('/')} class="font-display text-xl tracking-tight lowercase">semester zero</a>
+        <nav aria-label="Primary" class="flex flex-wrap gap-6 text-xs tracking-widest uppercase text-base-content/70">
+          <a class="hover:text-base-content" href={withBase('/')}>Home</a>
+          <a class="hover:text-base-content" href="https://github.com/semesterzero/main-blog/blob/main/CONTRIBUTING.md">Write a post</a>
+          <a class="hover:text-base-content" href="https://github.com/semesterzero/main-blog">GitHub</a>
+        </nav>
+      </header>
+
+      <div class="border-b border-base-300 px-6 py-3 md:px-10">
+        <StageNav />
       </div>
-    </header>
-    <div class="border-b border-base-300 mx-auto w-full max-w-3xl px-4 py-3">
-      <StageNav />
+
+      <main class="mx-auto w-full max-w-3xl flex-1 px-6 py-12 md:px-10">
+        <slot />
+      </main>
+
+      <footer class="border-t border-base-300 px-6 py-6 text-center text-xs text-base-content/60 md:px-10">
+        <p>
+          Code is MIT licensed. Content is CC BY 4.0 — authors keep copyright
+          and grant publishing rights. See
+          <a class="underline hover:text-base-content" href="https://github.com/semesterzero/main-blog/blob/main/CONTRIBUTING.md">CONTRIBUTING</a> to write a post.
+        </p>
+      </footer>
     </div>
-    <main class="mx-auto w-full max-w-3xl flex-1 px-4 py-8">
-      <slot />
-    </main>
-    <footer class="footer footer-center border-t border-base-300 mx-auto w-full max-w-3xl px-4 py-6 text-sm text-base-content/70">
-      <p>
-        Code is MIT licensed. Content is CC BY 4.0 — authors keep copyright
-        and grant publishing rights. See
-        <a class="link" href="https://github.com/semesterzero/main-blog/blob/main/CONTRIBUTING.md">CONTRIBUTING</a> to write a post.
-      </p>
-    </footer>
   </body>
 </html>

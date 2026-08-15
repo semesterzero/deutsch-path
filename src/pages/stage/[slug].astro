@@ -19,7 +19,7 @@ const posts = (await getCollection('posts', ({ data }) => !data.draft && data.st
 ---
 
 <BaseLayout title={STAGE_LABELS[stage]}>
-  <h1 class="text-3xl font-bold mb-6">{STAGE_LABELS[stage]}</h1>
+  <h1 class="font-display text-3xl mb-8">{STAGE_LABELS[stage]}</h1>
 
   {posts.length === 0 && <p class="text-base-content/60">No posts for this stage yet.</p>}
 

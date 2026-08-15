@@ -9,20 +9,25 @@ const posts = (await getCollection('posts', ({ data }) => !data.draft)).sort(
 ---
 
 <BaseLayout title="Home">
-  <h1 class="text-3xl font-bold mb-2">Semester Zero</h1>
-  <p class="text-base-content/80 mb-8">
-    Real experiences of moving from India to Germany for a Master's — applications,
-    APS, visa appointments, blocked accounts, arrival, studying, working.
+  <h1 class="font-display text-center text-4xl leading-tight md:text-5xl">
+    Real experiences of moving from India to Germany for a Master's.
+  </h1>
+  <p class="mt-4 text-center text-base-content/70">
+    Applications, APS, visa appointments, blocked accounts, arrival, studying, working.
   </p>
 
-  {posts.map((post) => (
-    <PostCard
-      slug={post.id}
-      title={post.data.title}
-      description={post.data.description}
-      type={post.data.type}
-      stage={post.data.stage}
-      date={post.data.date}
-    />
-  ))}
+  <div aria-hidden="true" class="my-10 text-center text-accent">*</div>
+
+  <div>
+    {posts.map((post) => (
+      <PostCard
+        slug={post.id}
+        title={post.data.title}
+        description={post.data.description}
+        type={post.data.type}
+        stage={post.data.stage}
+        date={post.data.date}
+      />
+    ))}
+  </div>
 </BaseLayout>

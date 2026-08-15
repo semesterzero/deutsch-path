@@ -14,16 +14,16 @@ interface Props {
 const { slug, title, description, type, stage, date } = Astro.props;
 ---
 
-<article class="card card-border border-base-300 mb-4">
-  <div class="card-body p-4">
-    <div class="flex items-center gap-2 text-xs text-base-content/60">
-      <span class="badge badge-outline capitalize">{type}</span>
-      <span class="badge badge-outline">{STAGE_LABELS[stage]}</span>
-      <time datetime={date.toISOString()}>{date.toISOString().slice(0, 10)}</time>
-    </div>
-    <h3 class="card-title text-base mt-1">
-      <a class="link link-hover" href={withBase(`/posts/${slug}/`)}>{title}</a>
+<article class="grid grid-cols-1 gap-2 border-b border-base-300 py-6 first:pt-0 md:grid-cols-[10rem_1fr] md:gap-8">
+  <p class="text-xs tracking-widest uppercase text-base-content/50">
+    {type} · {STAGE_LABELS[stage]}
+    <br />
+    <time datetime={date.toISOString()}>{date.toISOString().slice(0, 10)}</time>
+  </p>
+  <div>
+    <h3 class="font-display text-2xl">
+      <a class="hover:underline" href={withBase(`/posts/${slug}/`)}>{title}</a>
     </h3>
-    <p class="text-base-content/80">{description}</p>
+    <p class="mt-2 text-base-content/70">{description}</p>
   </div>
 </article>

@@ -12,12 +12,10 @@ const isStale = Date.now() - lastVerified.getTime() > twelveMonthsMs;
 ---
 
 {isStale && (
-  <div role="alert" class="alert alert-warning alert-soft my-4 text-sm">
-    <span>
-      Facts in this post were last verified on{' '}
-      {lastVerified.toISOString().slice(0, 10)}, more than a year ago. Visa
-      rules, fees, and requirements change yearly — double-check anything
-      specific before relying on it.
-    </span>
-  </div>
+  <p class="my-6 border-l-2 border-accent pl-4 text-sm text-base-content/70">
+    Facts in this post were last verified on{' '}
+    {lastVerified.toISOString().slice(0, 10)}, more than a year ago. Visa
+    rules, fees, and requirements change yearly — double-check anything
+    specific before relying on it.
+  </p>
 )}
