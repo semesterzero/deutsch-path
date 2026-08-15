@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import tailwindcss from '@tailwindcss/vite';
 
 // This is a GitHub Pages *project* site (org: semesterzero, repo: main-blog),
 // not an org-root (semesterzero.github.io) site — base must stay '/main-blog/'
@@ -8,4 +9,7 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
   site: 'https://semesterzero.github.io/main-blog',
   base: '/main-blog/',
+  vite: {
+    plugins: [tailwindcss()],
+  },
 });

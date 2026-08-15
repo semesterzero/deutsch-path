@@ -1,6 +1,7 @@
 ---
 import StageNav from '../components/StageNav.astro';
 import { withBase } from '../lib/url';
+import '../styles/global.css';
 
 interface Props {
   title: string;
@@ -19,54 +20,24 @@ const { title, description = 'Real experiences of moving from India to Germany f
     <title>{title} · Semester Zero</title>
     <meta name="description" content={description} />
   </head>
-  <body>
-    <header>
-      <a class="site-name" href={withBase('/')}>Semester Zero</a>
-      <StageNav />
+  <body class="min-h-screen bg-base-100 text-base-content flex flex-col">
+    <header class="navbar border-b border-base-300 mx-auto max-w-3xl px-4">
+      <div class="flex-1">
+        <a class="text-lg font-bold" href={withBase('/')}>Semester Zero</a>
+      </div>
     </header>
-    <main>
+    <div class="border-b border-base-300 mx-auto w-full max-w-3xl px-4 py-3">
+      <StageNav />
+    </div>
+    <main class="mx-auto w-full max-w-3xl flex-1 px-4 py-8">
       <slot />
     </main>
-    <footer>
+    <footer class="footer footer-center border-t border-base-300 mx-auto w-full max-w-3xl px-4 py-6 text-sm text-base-content/70">
       <p>
         Code is MIT licensed. Content is CC BY 4.0 — authors keep copyright
         and grant publishing rights. See
-        <a href="https://github.com/semesterzero/main-blog/blob/main/CONTRIBUTING.md">CONTRIBUTING</a> to write a post.
+        <a class="link" href="https://github.com/semesterzero/main-blog/blob/main/CONTRIBUTING.md">CONTRIBUTING</a> to write a post.
       </p>
     </footer>
   </body>
 </html>
-
-<style is:global>
-  body {
-    font-family: system-ui, sans-serif;
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 0 1rem;
-    color: #1a1a1a;
-    line-height: 1.5;
-  }
-
-  header {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    padding: 1.5rem 0;
-    border-bottom: 1px solid #e2e2e2;
-  }
-
-  .site-name {
-    font-weight: 700;
-    font-size: 1.25rem;
-    color: inherit;
-    text-decoration: none;
-  }
-
-  footer {
-    margin-top: 3rem;
-    padding: 1.5rem 0;
-    border-top: 1px solid #e2e2e2;
-    font-size: 0.8rem;
-    color: #666;
-  }
-</style>

@@ -28,7 +28,7 @@ const sorted = [...posts].sort((a, b) => b.data.date.valueOf() - a.data.date.val
 ---
 
 <BaseLayout title={university}>
-  <h1>{university}</h1>
+  <h1 class="text-3xl font-bold mb-6">{university}</h1>
 
   {sorted.map((post) => (
     <PostCard
