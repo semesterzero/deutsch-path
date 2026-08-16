@@ -12,12 +12,7 @@ draft: false
 
 So, congrats! You have decided to study in Germany. But are you still confused about how to find and discover universities and courses? Unlike the US, Germany is not very well explored, and comparatively very few students from India are studying there.
 
-> **Image Suggestion 1: Hero / Header Image**
-> **What to look for:** A wide, bright shot of a well known German university building or campus, ideally with students walking around. Think historic stone architecture or a modern glass academic building.
-> **Why it fits:** It sets the tone immediately and signals German higher education before the reader has read a word.
-> **Placement:** Directly under the blog title, above the intro paragraph.
-> **Suggested caption:** *"Germany hosts hundreds of public universities. The hard part is narrowing them down."*
-> **Alt text:** "University campus building in Germany with students walking outside."
+![Germany hosts hundreds of public universities. The hard part is narrowing them down.](./shortlisting-hero.webp)
 
 ---
 
@@ -33,12 +28,7 @@ You should also have a rough idea of what your goal is after a master's. Is it t
 
 Education in Germany is publicly funded, and most master's programmes [1] at German state or public universities [2] charge no tuition fee. [3] You normally pay a semester contribution, often roughly €150 to €350 per semester, depending on the university. [4]
 
-> **Image Suggestion 2: Cost / Money Visual**
-> **What to look for:** A clean flat lay or simple graphic involving Euro notes and coins, a calculator, and a notebook. Alternatively, a simple infographic style image showing a semester fee range.
-> **Why it fits:** It breaks up the text right where a concrete number appears, and money visuals hold attention well.
-> **Placement:** Immediately after the semester contribution paragraph.
-> **Suggested caption:** *"No tuition, but budget for the semester contribution."*
-> **Alt text:** "Euro currency and a calculator representing German semester fees."
+![No tuition, but budget for the semester contribution.](./shortlisting-cost.webp)
 
 ---
 
@@ -52,12 +42,9 @@ Smaller cities usually have a lower cost of living but fewer job opportunities. 
 
 It would be preferable if you chose cities with jobs in your field, so that it would be easier to find a Studentenwerk job rather than relying on mini jobs.
 
-> **Image Suggestion 3: Big City vs Small Town Comparison**
-> **What to look for:** Two images side by side. A busy German metropolitan skyline such as Frankfurt or Berlin, and a quiet small German town street with older buildings. If your site supports it, place them in a two column layout.
-> **Why it fits:** It makes the trade off visual and instant instead of purely textual.
-> **Placement:** Right after the paragraphs on city size.
-> **Suggested caption:** *"Bigger city, bigger opportunities, and bigger rent."*
-> **Alt text:** "Side by side comparison of a large German city skyline and a small German town street."
+![Bigger city, bigger opportunities, and bigger rent — Frankfurt's skyline.](./shortlisting-big-city.webp)
+
+![A quieter, smaller German town street, by comparison.](./shortlisting-small-town.webp)
 
 ### b) Would You Like to Go to a Technische Universität or a Hochschule?
 
@@ -90,12 +77,7 @@ You can obviously choose cities such as Berlin, Munich, Frankfurt and Hamburg, w
 
 It is important to note that even the smaller cities are connected to the bigger ones via Deutsche Bahn and are only a few hours away if you ever need to travel there.
 
-> **Image Suggestion 5: Map or Rail Connectivity**
-> **What to look for:** A clean map of Germany with major cities marked, or a photo of a Deutsche Bahn ICE train at a station platform.
-> **Why it fits:** It reinforces the point that distance is not a real barrier in Germany.
-> **Placement:** After the Deutsche Bahn paragraph.
-> **Suggested caption:** *"Smaller cities are rarely more than a few hours from a major hub."*
-> **Alt text:** "Map of Germany showing major cities, or a Deutsche Bahn train at a platform."
+![Smaller cities are rarely more than a few hours from a major hub.](./shortlisting-rail.webp)
 
 ---
 
@@ -126,11 +108,7 @@ Some universities may require GRE, GMAT, TM-WISO or TestAS scores above a partic
 
 Some programmes also require a language qualification in English at a certain level, such as IELTS 7.0, and even German in some instances. Alongside all of this, keep an eye on the deadline for the submission of applications.
 
-> **Image Suggestion 7: Checklist Visual**
-> **What to look for:** A clean overhead photo of a printed checklist with ticked boxes, or a minimal flat design checklist graphic.
-> **Why it fits:** It visually signals that this is the part you actually have to do, and gives the eye a rest between two list heavy sections.
-> **Placement:** After the "What to Check on Each Programme Page" section.
-> **Alt text:** "Checklist with ticked boxes representing university application requirements."
+![Checklist with ticked boxes representing university application requirements.](./shortlisting-checklist.webp)
 
 ---
 
@@ -142,12 +120,7 @@ All universities will ask for an APS certificate if you're from India, China or 
 
 Plan your APS, language exams, GRE, IELTS and GMAT on time so that you can make early applications.
 
-> **Image Suggestion 8: Documents / Paperwork**
-> **What to look for:** A neat desk shot with a passport, certificates, a folder and a laptop. Avoid anything with readable personal details.
-> **Why it fits:** It anchors the most stressful section of the post with something calm and organised.
-> **Placement:** After the APS paragraph.
-> **Suggested caption:** *"Get the APS and VPD sorted before deadlines, not during them."*
-> **Alt text:** "Passport, certificates and folder arranged on a desk for a university application."
+![Get the APS and VPD sorted before deadlines, not during them.](./shortlisting-documents.webp)
 
 ---
 
@@ -155,11 +128,7 @@ Plan your APS, language exams, GRE, IELTS and GMAT on time so that you can make 
 
 Early applications matter in the case of NC-frei programmes. NC-frei means there is no restriction on the number of admissions in a semester, while NC means admission depends on the number of seats available. In both cases, it's important to apply first.
 
-> **Image Suggestion 9: Deadline / Calendar**
-> **What to look for:** A calendar with a date circled in red, or a desk calendar beside a laptop. Keep it clean and uncluttered.
-> **Why it fits:** Urgency is the whole message of this section.
-> **Placement:** Beside or above this section.
-> **Alt text:** "Calendar with an application deadline circled."
+![Calendar with an application deadline circled.](./shortlisting-deadline.webp)
 
 ---
 
