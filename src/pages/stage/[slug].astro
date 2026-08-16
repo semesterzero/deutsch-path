@@ -14,9 +14,10 @@ const { slug } = Astro.params;
 const stage = slug as (typeof STAGES)[number];
 
 const posts = await getSortedPosts((post) => post.data.stage === stage);
+const description = `Experiences and guides tagged "${STAGE_LABELS[stage]}" — part of the journey from India to Germany.`;
 ---
 
-<BaseLayout title={STAGE_LABELS[stage]}>
+<BaseLayout title={STAGE_LABELS[stage]} description={description}>
   <h1 class="font-display text-3xl mb-8">{STAGE_LABELS[stage]}</h1>
 
   <PostList posts={posts} emptyMessage="No posts for this stage yet." />

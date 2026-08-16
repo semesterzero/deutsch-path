@@ -1,0 +1,45 @@
+---
+// Single source of truth for <head> SEO tags — canonical, description,
+// Open Graph, Twitter card. Every page goes through this via BaseLayout;
+// don't hand-roll these tags on individual pages.
+import type { Language } from '../lib/constants';
+
+interface Props {
+  title: string;
+  description: string;
+  lang: Language;
+  type?: 'website' | 'article';
+  publishedTime?: Date;
+  modifiedTime?: Date;
+  noindex?: boolean;
+}
+
+const { title, description, lang, type = 'website', publishedTime, modifiedTime, noindex = false } = Astro.props;
+
+const SITE_NAME = 'Deutsch Path';
+const fullTitle = title === 'Home' ? `${SITE_NAME} · Real experiences of moving to Germany` : `${title} · ${SITE_NAME}`;
+
+// Astro.url.pathname already includes `base` (e.g. `/deutsch-path/...`), and
+// Astro.site is origin + base — resolving an absolute path against it drops
+// the path component of Astro.site, so this intentionally re-derives the
+// full absolute URL from the origin rather than naively joining the two.
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+
+<title>{fullTitle}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+{noindex && <meta name="robots" content="noindex, follow" />}
+
+<meta property="og:type" content={type} />
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:site_name" content={SITE_NAME} />
+<meta property="og:locale" content={lang === 'de' ? 'de_DE' : 'en_US'} />
+{publishedTime && <meta property="article:published_time" content={publishedTime.toISOString()} />}
+{modifiedTime && <meta property="article:modified_time" content={modifiedTime.toISOString()} />}
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content={fullTitle} />
+<meta name="twitter:description" content={description} />

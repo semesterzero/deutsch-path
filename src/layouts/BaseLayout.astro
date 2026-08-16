@@ -2,6 +2,7 @@
 import { Icon } from 'astro-icon/components';
 import StageNav from '../components/StageNav.astro';
 import GermanMark from '../components/GermanMark.astro';
+import SEO from '../components/SEO.astro';
 import { REPO_URL, type Language } from '../lib/constants';
 import { withBase } from '../lib/url';
 import { newPostGitHubUrl } from '../lib/newPostUrl';
@@ -11,12 +12,20 @@ interface Props {
   title: string;
   description?: string;
   lang?: Language;
+  type?: 'website' | 'article';
+  publishedTime?: Date;
+  modifiedTime?: Date;
+  noindex?: boolean;
 }
 
 const {
   title,
   description = 'Real experiences of moving from India to Germany for a Master\'s.',
   lang = 'en',
+  type = 'website',
+  publishedTime,
+  modifiedTime,
+  noindex = false,
 } = Astro.props;
 ---
 
@@ -25,11 +34,20 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google-site-verification" content="YKIxMRJtSIcLsw-5BNhmXxiSIAd9YfDoTns1tUqZ6-Q" />
     <link rel="icon" href={withBase('/favicon.svg')} />
     <link rel="sitemap" href={withBase('/sitemap-index.xml')} />
     <link rel="alternate" type="application/rss+xml" title="Deutsch Path" href={withBase('/rss.xml')} />
-    <title>{title} · Deutsch Path</title>
-    <meta name="description" content={description} />
+    <SEO
+      title={title}
+      description={description}
+      lang={lang}
+      type={type}
+      publishedTime={publishedTime}
+      modifiedTime={modifiedTime}
+      noindex={noindex}
+    />
+    <slot name="head" />
   </head>
   <body class="flex min-h-screen flex-col bg-base-100 text-base-content">
     <header class="flex flex-wrap items-center justify-between gap-4 border-b border-base-300 px-6 py-6 md:px-10">

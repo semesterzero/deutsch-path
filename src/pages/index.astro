@@ -7,9 +7,20 @@ import { getSortedPosts } from '../lib/posts';
 const posts = await getSortedPosts();
 
 const journey = ['Applications', 'APS', 'Visa appointments', 'Blocked accounts', 'Arrival', 'Studying', 'Working'];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Deutsch Path',
+  url: Astro.site?.href,
+  description: 'Real experiences of moving from India to Germany for a Master\'s.',
+};
 ---
 
 <BaseLayout title="Home">
+  <Fragment slot="head">
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
+  </Fragment>
   <h1 class="font-display text-center text-4xl leading-tight md:text-5xl">
     Real experiences of moving from India to Germany for a Master's.
   </h1>

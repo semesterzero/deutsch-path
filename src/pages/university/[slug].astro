@@ -26,9 +26,10 @@ export async function getStaticPaths() {
 const { posts } = Astro.props;
 const university = posts[0].data.university!;
 const sorted = sortPostsByDateDesc(posts);
+const description = `Experiences from students who went to ${university} in Germany, shared on Deutsch Path.`;
 ---
 
-<BaseLayout title={university}>
+<BaseLayout title={university} description={description}>
   <h1 class="font-display text-3xl mb-8">{university}</h1>
 
   <PostList posts={sorted} />

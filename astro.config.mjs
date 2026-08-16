@@ -11,7 +11,12 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://semesterzero.github.io/deutsch-path',
   base: '/deutsch-path/',
-  integrations: [icon(), sitemap()],
+  integrations: [
+    icon(),
+    sitemap({
+      filter: (page) => !page.includes('/search'),
+    }),
+  ],
   vite: {
     plugins: [tailwindcss()],
   },
