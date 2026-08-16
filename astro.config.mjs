@@ -3,6 +3,7 @@ import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import icon from 'astro-icon';
 import sitemap from '@astrojs/sitemap';
+import rehypeFigureImages from './src/lib/rehypeFigureImages.mjs';
 
 // This is a GitHub Pages *project* site (org: semesterzero, repo: deutsch-path),
 // not an org-root (semesterzero.github.io) site — base must stay '/deutsch-path/'
@@ -17,6 +18,9 @@ export default defineConfig({
       filter: (page) => !page.includes('/search'),
     }),
   ],
+  markdown: {
+    rehypePlugins: [rehypeFigureImages],
+  },
   vite: {
     plugins: [tailwindcss()],
   },

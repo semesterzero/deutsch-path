@@ -75,6 +75,19 @@ allowlists in `src/lib/constants.ts`. If the build fails because your value
 isn't recognized, add it there — don't work around it by leaving the field
 free text.
 
+### Adding an image
+
+Save the image next to your post file in `content/posts/`, under 300KB and
+converted to WebP, then reference it with a relative path on its own line:
+
+```md
+![VFS Chennai waiting room, 8am](./vfs-chennai-waiting-room.webp)
+```
+
+It'll automatically render with a bordered, captioned treatment matching the
+site's look — no extra syntax needed. The alt text you write *is* the visible
+caption, so make it a real description, not `image1` or left blank.
+
 ## Writing a multilingual post
 
 Every post defaults to English (`lang: en`). A translation is **not** a new
