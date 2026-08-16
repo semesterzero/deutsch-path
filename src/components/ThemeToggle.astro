@@ -1,0 +1,53 @@
+---
+// Light is the default theme (set on <html> server-side in BaseLayout).
+// The anti-flash script in BaseLayout's <head> flips <html data-theme> to
+// "editorial-dark" before paint if a stored preference says so — this
+// component just needs to reflect/toggle that same attribute + storage key.
+import { Icon } from 'astro-icon/components';
+---
+
+<button
+  id="theme-toggle"
+  type="button"
+  aria-label="Switch to dark mode"
+  class="inline-flex items-center hover:text-base-content"
+>
+  <Icon name="lucide:moon" width={14} height={14} class="theme-toggle-moon" />
+  <Icon name="lucide:sun" width={14} height={14} class="theme-toggle-sun" />
+</button>
+
+<style>
+  .theme-toggle-sun {
+    display: none;
+  }
+  :global([data-theme='editorial-dark']) .theme-toggle-moon {
+    display: none;
+  }
+  :global([data-theme='editorial-dark']) .theme-toggle-sun {
+    display: inline;
+  }
+</style>
+
+<script is:inline>
+  (function () {
+    var STORAGE_KEY = 'theme';
+    var DARK = 'editorial-dark';
+    var LIGHT = 'editorial';
+
+    var button = document.getElementById('theme-toggle');
+    if (!button) return;
+
+    // The anti-flash script in BaseLayout's <head> may have already flipped
+    // <html data-theme> to dark before this ran — sync the label to match.
+    var isDark = document.documentElement.getAttribute('data-theme') === DARK;
+    button.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+
+    button.addEventListener('click', function () {
+      var root = document.documentElement;
+      var next = root.getAttribute('data-theme') === DARK ? LIGHT : DARK;
+      root.setAttribute('data-theme', next);
+      localStorage.setItem(STORAGE_KEY, next);
+      button.setAttribute('aria-label', next === DARK ? 'Switch to light mode' : 'Switch to dark mode');
+    });
+  })();
+</script>

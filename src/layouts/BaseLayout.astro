@@ -2,6 +2,7 @@
 import { Icon } from 'astro-icon/components';
 import StageNav from '../components/StageNav.astro';
 import GermanMark from '../components/GermanMark.astro';
+import ThemeToggle from '../components/ThemeToggle.astro';
 import SEO from '../components/SEO.astro';
 import { REPO_URL, type Language } from '../lib/constants';
 import { withBase } from '../lib/url';
@@ -34,6 +35,15 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script is:inline>
+      // Runs before paint so a stored dark-mode preference doesn't flash
+      // light first. Light is the default — this only ever flips to dark.
+      (function () {
+        if (localStorage.getItem('theme') === 'editorial-dark') {
+          document.documentElement.setAttribute('data-theme', 'editorial-dark');
+        }
+      })();
+    </script>
     <meta name="google-site-verification" content="YKIxMRJtSIcLsw-5BNhmXxiSIAd9YfDoTns1tUqZ6-Q" />
     <meta name="msvalidate.01" content="B533A5AED7E7A413CB4A65789042E742" />
     <link rel="icon" href={withBase('/favicon.svg')} />
@@ -70,6 +80,7 @@ const {
           <Icon name="lucide:github" width={14} height={14} />
           GitHub
         </a>
+        <ThemeToggle />
       </nav>
     </header>
 
