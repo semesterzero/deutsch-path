@@ -12,7 +12,7 @@ draft: false
 
 So, congrats! You have decided to study in Germany. But are you still confused about how to find and discover universities and courses? Unlike the US, Germany is not very well explored, and comparatively very few students from India are studying there.
 
-![Germany hosts hundreds of public universities. The hard part is narrowing them down.](./shortlisting-hero.webp)
+![Germany hosts hundreds of public universities. The hard part is narrowing them down.](../images/shortlisting-universities-guide/shortlisting-hero.webp)
 
 ---
 
@@ -22,13 +22,15 @@ It is important to actually have your interests locked in before you start hunti
 
 You should also have a rough idea of what your goal is after a master's. Is it to get into research via a PhD, to get a job, or, if you're ambitious, entrepreneurship?
 
+![CARVE YOUR OWN PATH](../images/shortlisting-universities-guide/career-options.webp)
+
 ---
 
 ## 2. A Quick Word on Cost
 
 Education in Germany is publicly funded, and most master's programmes [1] at German state or public universities [2] charge no tuition fee. [3] You normally pay a semester contribution, often roughly €150 to €350 per semester, depending on the university. [4]
 
-![No tuition, but budget for the semester contribution.](./shortlisting-cost.webp)
+![No tuition, but budget for the semester contribution.](../images/shortlisting-universities-guide/shortlisting-cost.webp)
 
 ---
 
@@ -42,9 +44,9 @@ Smaller cities usually have a lower cost of living but fewer job opportunities. 
 
 It would be preferable if you chose cities with jobs in your field, so that it would be easier to find a Studentenwerk job rather than relying on mini jobs.
 
-![Bigger city, bigger opportunities, and bigger rent — Frankfurt's skyline.](./shortlisting-big-city.webp)
+![Bigger city, bigger opportunities, and bigger rent — Frankfurt's skyline.](../images/shortlisting-universities-guide/shortlisting-big-city.webp)
 
-![A quieter, smaller German town street, by comparison.](./shortlisting-small-town.webp)
+![A quieter, smaller German town street, by comparison.](../images/shortlisting-universities-guide/shortlisting-small-town.webp)
 
 ### b) Would You Like to Go to a Technische Universität or a Hochschule?
 
@@ -56,12 +58,7 @@ It would be preferable if you chose cities with jobs in your field, so that it w
 
 Germany has built out separate pathways for research and applied sciences on purpose. Studying at either type of university should not hinder your future job prospects, as employers usually do not show bias based on your university degree unless it's a private university. [6]
 
-> **Image Suggestion 4: TU vs Hochschule Diagram**
-> **What to look for:** A simple comparison graphic you make yourself in something like Canva, with three labelled columns for Technische Universität, Hochschule and Technische Hochschule. Give each a one line descriptor such as "Theory heavy, PhD pathway", "Practical, job oriented", and "Applied engineering with some research".
-> **Why it fits:** This is the densest section of the post, and a diagram lets a skimming reader absorb it in five seconds.
-> **Placement:** At the end of this subsection, just before "Think About Personal Preference".
-> **Suggested caption:** *"Two different pathways, built that way on purpose."*
-> **Alt text:** "Comparison chart of Technische Universität, Hochschule and Technische Hochschule in Germany."
+![THREE SEPERATE PATHWAYS.](../images/shortlisting-universities-guide/colleges.webp)
 
 ### c) Think About Personal Preference
 
@@ -77,7 +74,7 @@ You can obviously choose cities such as Berlin, Munich, Frankfurt and Hamburg, w
 
 It is important to note that even the smaller cities are connected to the bigger ones via Deutsche Bahn and are only a few hours away if you ever need to travel there.
 
-![Smaller cities are rarely more than a few hours from a major hub.](./shortlisting-rail.webp)
+![Smaller cities are rarely more than a few hours from a major hub.](../images/shortlisting-universities-guide/shortlisting-rail.webp)
 
 ---
 
@@ -87,12 +84,7 @@ Now that you have your priorities in order, you can start your shortlisting proc
 
 Most of the sources I have referred to point you to DAAD, which contains a list of courses with colleges and adequate filters to find colleges of your liking. But in my personal experience, I have observed that the information is either stale or sometimes even too overwhelming to look at. So I would advise future aspirants to follow this process of shortlisting.
 
-> **Image Suggestion 6: DAAD Portal Screenshot**
-> **What to look for:** A screenshot of the DAAD course search page with the filter sidebar visible. Blur or crop out anything personal. Consider adding a coloured arrow or box highlighting the filter panel.
-> **Why it fits:** The reader is about to follow step by step instructions on this exact page, and showing it removes all ambiguity.
-> **Placement:** Right before the numbered steps below.
-> **Suggested caption:** *"The DAAD database is useful, but only if you filter aggressively."*
-> **Alt text:** "Screenshot of the DAAD course search filters."
+![DAAD is a centralised repo for universities](../images/shortlisting-universities-guide/daad.webp)
 
 ### Step by Step
 
@@ -108,7 +100,7 @@ Some universities may require GRE, GMAT, TM-WISO or TestAS scores above a partic
 
 Some programmes also require a language qualification in English at a certain level, such as IELTS 7.0, and even German in some instances. Alongside all of this, keep an eye on the deadline for the submission of applications.
 
-![Checklist with ticked boxes representing university application requirements.](./shortlisting-checklist.webp)
+![Checklist with ticked boxes representing university application requirements.](../images/shortlisting-universities-guide/shortlisting-checklist.webp)
 
 ---
 
@@ -120,7 +112,7 @@ All universities will ask for an APS certificate if you're from India, China or 
 
 Plan your APS, language exams, GRE, IELTS and GMAT on time so that you can make early applications.
 
-![Get the APS and VPD sorted before deadlines, not during them.](./shortlisting-documents.webp)
+![Get the APS and VPD sorted before deadlines, not during them.](../images/shortlisting-universities-guide/shortlisting-documents.webp)
 
 ---
 
@@ -128,7 +120,7 @@ Plan your APS, language exams, GRE, IELTS and GMAT on time so that you can make 
 
 Early applications matter in the case of NC-frei programmes. NC-frei means there is no restriction on the number of admissions in a semester, while NC means admission depends on the number of seats available. In both cases, it's important to apply first.
 
-![Calendar with an application deadline circled.](./shortlisting-deadline.webp)
+![Calendar with an application deadline circled.](../images/shortlisting-universities-guide/shortlisting-deadline.webp)
 
 ---
 
@@ -136,12 +128,8 @@ Early applications matter in the case of NC-frei programmes. NC-frei means there
 
 It would be a good idea to create a tracker in Excel after applying.
 
-> **Image Suggestion 10: Application Tracker Spreadsheet**
-> **What to look for:** A screenshot of your own sample tracker spreadsheet, with columns such as University, Course, City, Deadline, VPD Required and Status. Fill it with dummy data.
-> **Why it fits:** This is the single most actionable takeaway in the post, and showing the actual layout makes it copyable.
-> **Placement:** Directly under this line, as the closing visual of the post.
-> **Suggested caption:** *"A simple tracker saves you from missing a deadline you already qualified for."*
-> **Alt text:** "Spreadsheet tracking university applications with deadlines and status columns."
+![A SAMPLE TRACKER.](../images/shortlisting-universities-guide/application_tracker.webp)
+
 
 ---
 
