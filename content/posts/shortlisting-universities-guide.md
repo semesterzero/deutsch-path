@@ -10,7 +10,7 @@ tags: [university, documents, aps]
 draft: false
 ---
 
-So, congrats! You have decided to study in Germany. But are you still confused about how to find and discover universities and courses? Unlike the US, Germany is not very well explored, and comparatively very few students from India are studying there.
+So, congrats! You have decided to study in Germany. But are you still confused about how to find and discover universities and courses? Unlike the US, Germany is not very well explored, and comparatively fewer international students are studying there.
 
 ![Germany hosts hundreds of public universities. The hard part is narrowing them down.](../images/shortlisting-universities-guide/shortlisting-hero.webp)
 
